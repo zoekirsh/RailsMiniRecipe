@@ -1,0 +1,11 @@
+<h2><%= @user.name %></h2>
+<br>
+<ul>
+<% @user.recipes.each do |recipe| %>
+  <li><%= link_to recipe.name, recipe %></li>
+<% end %>
+</ul>
+<br>
+<div>
+<%= button_to "Delete user", @user, method: :delete %>
+</div>

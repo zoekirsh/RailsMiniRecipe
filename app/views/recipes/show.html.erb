@@ -1,0 +1,11 @@
+<h1><%= @recipe.name %></h1>
+
+<ol>
+<% @recipe.ingredients.each do |i|%>
+  <li><%= i.name %></li>
+<% end %>
+</ol>
+
+<%= button_to "Edit", edit_recipe_path, method: :get %>
+<%= button_to "Delete this recipe", @recipe, method: :delete %>
+<%= link_to "Back to all recipes", recipes_path %>

@@ -1,0 +1,7 @@
+<% @recipes.each do |r| %>
+  <p>
+  <%= link_to r.name, r %>
+  </p>
+<% end %>
+
+<%= button_to "Sort by Number of Ingredients", sort_low_high_path, method: :get %>

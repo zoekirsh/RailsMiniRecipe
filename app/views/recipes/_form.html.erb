@@ -1,0 +1,17 @@
+<% if flash[:errors] %>
+  <%= flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<h3>
+<%= form_with model:@recipe do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.collection_select :user_id, @users, :id, :name %>
+
+  <%= f.collection_check_boxes :ingredients, @ingredients, :id, :name, include_hidden: false %>
+  <%= f.submit %>
+<% end %>
+</h3>
